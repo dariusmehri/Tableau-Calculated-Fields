@@ -6,6 +6,10 @@
 
 (DATEDIFF('day', [Requested Date Original], [Inspection Scheduled])) * 0.68
 
+###Current date field:
+
+date(today())
+
 #Creating bins:
 
 IF [Disp Code 2] == "E1" THEN 1 
