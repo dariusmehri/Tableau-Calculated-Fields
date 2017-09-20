@@ -36,6 +36,16 @@ OR
 contains("XX, H1, E1,E2,E3,E6,E7, E8, EA, EB, EC, EE, EZ, F1, F2, F3, F4, F5, F6, F7, 
 F8, F9, G2, G3, G4, G5, G6, G7, G8, G9",[Disp Code])
 
-
-
 =true THEN 1 ELSE 0 
+
+# Calculate workdays:
+
+DATEDIFF('week', [Utility Visit Date], [Annual DOB Visit Date])*5 +
+
+MIN(DATEPART('weekday', [Utility Visit Date]), 6) -
+
+MIN(DATEPART('weekday', [Annual DOB Visit Date]), 6)
+
+
+
+
